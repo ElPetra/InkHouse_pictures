@@ -1,0 +1,35 @@
+.container_products {
+  @include flex-row-sb-aic;
+  gap: 30px;
+}
+.products__img {
+  max-width: 540px;
+  height: 621px;
+  object-fit: cover;
+}
+.products__content {
+  max-width: 540px;
+  height: 621px;
+  @include flex-col-fs-jcc;
+}
+.title {
+  color: $main-text-color;
+  font-family: $main-text, sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 110%;
+}
+.title_green {
+  color: $secondary-text-color;
+}
+.products__descr {
+  margin-top: 20px;
+  color: $third-text-color;
+  font-family: $main-text, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+.btn_products {
+  margin-top: 60px;
+}

@@ -1,0 +1,8 @@
+.logo {
+  @include flex-row-aic;
+  color: $secondary-text-color;
+  font-family: $main-text, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  gap: 8px;
+}

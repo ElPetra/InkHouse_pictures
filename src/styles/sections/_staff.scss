@@ -1,0 +1,35 @@
+.staff {
+  padding: 149px 0 70px;
+}
+.container_staff {
+  @include flex-row-fs;
+}
+.text__team {
+  max-width: 635px;
+}
+.picture {
+  height: 440px;
+  max-width: 440px;
+  position: relative;
+}
+.team {
+  @include flex-col-fs-jcc;
+  gap: 20px;
+}
+.baguette {
+  height: 440px;
+  max-width: 361px;
+  object-fit: contain;
+}
+.hand {
+  max-width: 269px;
+  height: 397px;
+  position: absolute;
+  transform: translate(-120%, -17%);
+}
+.avatars {
+  @include flex-row-fs;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}

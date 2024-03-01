@@ -1,0 +1,27 @@
+.country {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #d4e8d9;
+  color: $main-text-color;
+  font-family: $main-text, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+}
+.country:hover {
+  color: #f4f6f5;
+  background-color: $secondary-text-color;
+}
+.country:focus {
+  color: $main-text-color;
+  background-color: $focus-color;
+  border: 2px solid $secondary-text-color;
+}
+// .country:active {
+//   color:#F4F6F5;
+//   background-color: $active-color;
+// }
+.country.active {
+  color: #f4f6f5;
+  background-color: $active-color;
+}

@@ -1,0 +1,27 @@
+.button {
+  padding: 20px 60px;
+  color: $secondary-text-color;
+  font-family: $main-text, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid $secondary-text-color;
+  display: inline-flex;
+  height: 65px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.button:hover {
+  color: #f4f6f5;
+  background-color: $secondary-text-color;
+}
+// .button:focus {
+//   color: $secondary-text-color;
+//   background-color: $focus-color;
+// }
+.button:active {
+  color: #ffffff;
+  background-color: $active-color;
+}
+

@@ -1,0 +1,24 @@
+.reproductions {
+  padding: 70px 0;
+}
+.reproductions__title {
+  @include flex-row-sb-aic;
+}
+.countries {
+  @include flex-row-aic;
+  gap: 32px;
+}
+.catalogArt {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin-top: 30px;
+  width: 100%;
+  gap: 30px;
+}
+.button_added {
+  color: #ffffff;
+  background-color: $active-color;
+}
+.button_article {
+  margin-top: 20px;
+}

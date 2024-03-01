@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ink. House</title>
+    <link rel="icon" href="./src/images/Star 1.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div class="container container_header">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 35 35"
+            fill="none"
+          >
+            <path
+              d="M17.5 0L19.9652 9.10444L26.9612 2.77806L24.1128 11.77L33.4186 10.2302L26.1609 16.2547L34.8219 19.9905L25.4593 21.1349L30.7256 28.9601L22.2306 24.861L22.4303 34.2911L17.5 26.25L12.5697 34.2911L12.7694 24.861L4.27438 28.9601L9.54072 21.1349L0.178125 19.9905L8.83906 16.2547L1.58144 10.2302L10.8872 11.77L8.03879 2.77806L15.0348 9.10444L17.5 0Z"
+              fill="#598D66"
+            />
+          </svg>
+          <a class="home">Ink. House</a>
+        </div>
+        <div class="header__links">
+          <a class="header__link">Репродукции</a>
+          <a class="header__link">Новинки</a>
+          <a class="header__link">О нас</a>
+          <a class="header__link bin">
+          <div></div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_25491_102)">
+                <path
+                  d="M8.25001 20.1667C8.75627 20.1667 9.16668 19.7563 9.16668 19.25C9.16668 18.7438 8.75627 18.3334 8.25001 18.3334C7.74375 18.3334 7.33334 18.7438 7.33334 19.25C7.33334 19.7563 7.74375 20.1667 8.25001 20.1667Z"
+                  stroke="#2C2D35"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18.3333 20.1667C18.8396 20.1667 19.25 19.7563 19.25 19.25C19.25 18.7438 18.8396 18.3334 18.3333 18.3334C17.8271 18.3334 17.4167 18.7438 17.4167 19.25C17.4167 19.7563 17.8271 20.1667 18.3333 20.1667Z"
+                  stroke="#2C2D35"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0.916656 0.916626H4.58332L7.03999 13.1908C7.12381 13.6128 7.35341 13.9919 7.68857 14.2617C8.02374 14.5315 8.44313 14.6749 8.87332 14.6666H17.7833C18.2135 14.6749 18.6329 14.5315 18.9681 14.2617C19.3032 13.9919 19.5328 13.6128 19.6167 13.1908L21.0833 5.49996H5.49999"
+                  stroke="#2C2D35"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_25491_102">
+                  <rect width="22" height="22" fill="white" />
+                </clipPath>
+              </defs></svg></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="on-off">
+      <!--Products-->
+      <section class="products">
+        <div class="container container_products">
+          <img
+            class="products__img"
+            src="./src/images/bird.webp"
+            srcset="./src/images/bird.webp 1x, ./src/images/bird@2x.webp 2x"
+            alt="bird"
+          />
+          <div class="products__content">
+            <h1 class="title">
+              Реплики картин от&nbsp;<span class="title title_green"
+                >Ink. House</span
+              >
+            </h1>
+            <p class="products__descr">
+              Высокое качество отрисовки на плотной бумаге или льняном холсте.
+              Редкие произведения, доступные цены.
+            </p>
+            <button class="button btn_products">Продукция</button>
+          </div>
+        </div>
+      </section>
+      <!--Reproductions-->
+      <section class="reproductions">
+        <div class="container">
+          <div class="reproductions__title">
+            <h2 class="title__block">Репродукции</h2>
+            <div class="countries">
+              <button id="france" class="country active">Франция</button>
+              <button id="germany" class="country">Германия</button>
+              <button id="england" class="country">Англия</button>
+            </div>
+          </div>
+          <div class="catalogArt">
+            <!-- <article class="reproduction">
+              <img
+                class="picture"
+                src="./src/images/picture.webp"
+                alt="Охота Амура"
+              />
+              <div class="info">
+                <p class="painter">Марсель Руссо</p>
+                <h3 class="name">Охота Амура</h3>
+                <p class="descr">Холст, масло (50х80)</p>
+                <p class="price">14 500 руб</p>
+              </div>
+              <button class="button button_article">В корзину</button>
+            </article> -->
+          </div>
+        </div>
+      </section>
+      <!--News-->
+      <section class="news">
+        <div class="container">
+          <div class="news__title">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="80"
+              height="79"
+              viewBox="0 0 80 79"
+              fill="none"
+            >
+              <path
+                d="M46.6407 21.9227L58.5227 11.1781L53.685 26.4498L52.9462 28.782L55.3599 28.3827L71.1646 25.7676L58.8384 35.9995L56.956 37.5621L59.2023 38.531L73.9119 44.8758L58.0107 46.8194L55.5823 47.1162L56.9482 49.1458L65.8925 62.436L51.4647 55.4741L49.2614 54.4109L49.3132 56.8568L49.6523 72.8729L41.2788 59.2159L40 57.1303L38.7212 59.2159L30.3477 72.8729L30.6868 56.8568L30.7386 54.4109L28.5353 55.4741L14.1075 62.436L23.0518 49.1458L24.4177 47.1162L21.9893 46.8194L6.08807 44.8758L20.7977 38.531L23.044 37.5621L21.1616 35.9995L8.83541 25.7676L24.6401 28.3827L27.0538 28.782L26.315 26.4498L21.4773 11.1781L33.3593 21.9227L35.1738 23.5636L35.8132 21.2022L40 5.73935L44.1868 21.2022L44.8262 23.5636L46.6407 21.9227Z"
+                stroke="#EEDB6D"
+                stroke-width="3"
+              />
+            </svg>
+            <h4 class="h4">Новая коллекция французских авторов</h4>
+          </div>
+          <div class="news__descr">
+            <p class="news__text">
+              Сложно сказать, почему акционеры крупнейших компаний призывают нас
+              к новым свершениям, которые, в свою очередь, должны быть
+              заблокированы в рамках своих собственных рациональных ограничений.
+            </p>
+            <p class="news__text">
+              Принимая во внимание показатели успешности, граница обучения
+              кадров предопределяет высокую востребованность направлений
+              прогрессивного развития.
+            </p>
+          </div>
+          <button class="button button_yellow">Ознакомиться</button>
+        </div>
+      </section>
+      <!--Staff-->
+      <section class="staff">
+        <div class="container container_staff">
+          <div class="picture">
+            <img class="baguette" src="./src/images/baguette.webp" alt="baguette" />
+<img class="hand" src="./src/images/hand.webp" alt="hand" />
+          </div>
+          <div class="team">
+         <h2 class="title__block title_team">Наша команда</h2>
+        <p class="text__team">Значимость этих проблем настолько очевидна, что базовый вектор развития позволяет оценить значение экспериментов, поражающих по&nbsp;своей масштабности и грандиозности. Мы вынуждены отталкиваться от&nbsp;того, что консультация с широким активом.</p>
+      <div class="avatars">
+        <img src="./src/images/Ellipse 30.webp" alt="Ellipse 30" />
+        <img src="./src/images/Ellipse 31.webp" alt="Ellipse 31" />
+        <img src="./src/images/Ellipse 32.webp" alt="Ellipse 32" />
+      </div>
+      </div>
+      </div>
+      </section>
+</section>
+<div class="modal d-none">
+  <div class="bin__title">
+    <h2 class="title__block">Корзина</h2>
+    <button class="modal__close">
+      <img class="modal__img" src="./src/images/cross.svg" alt="cross" />
+    </button>
+  </div>
+  <div class="container__basket">
+  <!-- <div class="position">
+    <div class="position__left">
+      <img class="picture__icon" src="./src/images/England/river.webp" alt="" />
+      <p class="descr descr_basket">Название картины</p>
+    </div>
+    <div class="position__right">
+      <p class="descr descr_basket">25000</p>
+      <img class="basket" src="./src/images/basket.svg" alt="delete" />
+    </div>
+  </div>
+  <div class="position">
+    <div class="position__left">
+      <img class="picture__icon" src="./src/images/England/river.webp" alt="" />
+      <p class="descr descr_basket">Название картины</p>
+    </div>
+    <div class="position__right">
+      <p class="descr descr_basket">25000</p>
+      <img class="basket" src="./src/images/basket.svg" alt="delete" />
+    </div>
+  </div> -->
+  </div>
+  <div class="result">
+    <!-- <p class="descr descr_basket">Заказ на сумму: <span class="price">25000 руб.</span> </p>
+    <button class="button button_order">Оформить</button> -->
+  </div>
+      </div>
+    </main>
+    <!--Footer-->
+    <footer>
+      <div class="container container_footer">
+<div class="footer__left">
+  <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 35 35"
+            fill="none"
+          >
+            <path
+              d="M17.5 0L19.9652 9.10444L26.9612 2.77806L24.1128 11.77L33.4186 10.2302L26.1609 16.2547L34.8219 19.9905L25.4593 21.1349L30.7256 28.9601L22.2306 24.861L22.4303 34.2911L17.5 26.25L12.5697 34.2911L12.7694 24.861L4.27438 28.9601L9.54072 21.1349L0.178125 19.9905L8.83906 16.2547L1.58144 10.2302L10.8872 11.77L8.03879 2.77806L15.0348 9.10444L17.5 0Z"
+              fill="#598D66"
+            />
+          </svg>
+          <a class="home">Ink. House</a>
+        </div>
+        <a class="footer__title tel" href="tel:+79995435454">+7 (999) 543-54-54</a>
+        <p class="footer__text">Мастерская</p>
+</div>
+<div class="footer__middle">
+  <div class="footer__links">
+  <p class="footer__title">Репродукции</p>
+  <a class="footer__text footer_country" href="#">Франция</a>
+  <a class="footer__text footer_country" href="#">Германия</a>
+  <a class="footer__text footer_country" href="#">Англия</a>
+</div>
+<div class="footer__links">
+  <p class="footer__title">Новинки</p>
+  <a class="footer__text footer_country" href="#">2021</a>
+  <a class="footer__text footer_country" href="#">2022</a>
+</div>
+<div class="footer__links">
+  <p class="footer__title">О нас</p>
+  <a class="footer__text footer_country" href="#">Художники</a>
+  <a class="footer__text footer_country" href="#">Менеджеры</a>
+</div>
+</div>
+<div class="footer__right">
+  <div class="icons">
+    <a class="icon" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g clip-path="url(#clip0_10_333)">
+    <path d="M15.402 21V14.034H17.735L18.084 11.326H15.402V9.598C15.402 8.814 15.62 8.279 16.744 8.279H18.178V5.857C17.4838 5.78334 16.7861 5.74762 16.088 5.75C14.021 5.75 12.606 7.012 12.606 9.33V11.326H10.268V14.034H12.606V21H4C3.73478 21 3.48043 20.8946 3.29289 20.7071C3.10536 20.5196 3 20.2652 3 20V4C3 3.73478 3.10536 3.48043 3.29289 3.29289C3.48043 3.10536 3.73478 3 4 3H20C20.2652 3 20.5196 3.10536 20.7071 3.29289C20.8946 3.48043 21 3.73478 21 4V20C21 20.2652 20.8946 20.5196 20.7071 20.7071C20.5196 20.8946 20.2652 21 20 21H15.402Z" fill="#2C2D35"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_10_333">
+      <rect width="24" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+    </a>
+    <a class="icon" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g clip-path="url(#clip0_10_334)">
+    <path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z" fill="#2C2D35"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_10_334">
+      <rect width="24" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+    </a>
+    <a class="icon" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g clip-path="url(#clip0_10_337)">
+    <path d="M21.543 6.498C22 8.28 22 12 22 12C22 12 22 15.72 21.543 17.502C21.289 18.487 20.546 19.262 19.605 19.524C17.896 20 12 20 12 20C12 20 6.107 20 4.395 19.524C3.45 19.258 2.708 18.484 2.457 17.502C2 15.72 2 12 2 12C2 12 2 8.28 2.457 6.498C2.711 5.513 3.454 4.738 4.395 4.476C6.107 4 12 4 12 4C12 4 17.896 4 19.605 4.476C20.55 4.742 21.292 5.516 21.543 6.498ZM10 15.5L16 12L10 8.5V15.5Z" fill="#2C2D35"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_10_337">
+      <rect width="24" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+    </a>
+  </div>
+  <div class="rights">
+    <p class="rights__text">Ink. House ®</p>
+    <p class="rights__text">All rights reserved</p>
+  </div>
+</div>
+      </div>
+    </footer>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>

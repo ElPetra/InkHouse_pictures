@@ -1,0 +1,94 @@
+.modal {
+  // position: fixed;
+  // z-index: 10;
+  top: 30px;
+  width: 80%;
+  // left: 50%;
+  margin: 0 auto;
+  // transform: translateX(-50%);
+  background-color: $accent-color;
+  // min-height: 400px;
+  padding: 30px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: min-content;
+  gap: 20px;
+}
+.modal__close {
+  border: none;
+}
+.modal__img {
+  width: 15px;
+  height: 15px;
+}
+.bin__title {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+}
+.position,
+.result {
+  // position: fixed;
+  // z-index: 10;
+  // top: 150px;
+  width: 80%;
+  // left: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 1px solid $secondary-text-color;
+  padding: 10px;
+  align-items: center;
+  background-color: $accent-color;
+  height: min-content;
+  margin: 0 auto;
+}
+.position__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.position__left {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+.basket {
+  width: 15px;
+  height: 15px;
+}
+.picture__icon {
+  max-width: 50px;
+  height: 40px;
+  object-fit: contain;
+  background-color: white;
+}
+.descr_basket {
+  margin-top: 0;
+}
+.button_order {
+  padding: 5px 20px;
+  height: min-content;
+}
+.container__basket {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+.no-items {
+  text-align: center;
+  color: $active-color;
+}
+.price_final {
+  margin-left: 10px;
+}

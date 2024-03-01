@@ -1,0 +1,39 @@
+@mixin flex-row-aic {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-row-sb-aic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flex-col-fs-jcc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@mixin flex-col-jcc-aic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-col-aifs-jcsb {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@mixin flex-row-fs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+}
+@mixin flex-row-aifs-jcsb {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
