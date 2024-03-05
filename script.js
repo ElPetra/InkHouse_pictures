@@ -3,54 +3,29 @@ import { data as art } from "./data.js";
 //рендер карточки
 
 let dataNew = art.filter((el) => el.country.toLocaleLowerCase() === "france");
-renderCard(dataNew);
 let body = document.querySelector("body");
-let catalog = document.querySelector(".catalogArt");
+let home = document.querySelector(".home");
 let btnsCountry = document.querySelectorAll(".country");
 let catalogArt = document.querySelector(".catalogArt");
 let modal = document.querySelector(".modal");
 let binIcon = document.querySelector(".bin");
 let LS = window.localStorage;
 let arr = [];
-let container__basket = document.querySelector(".container__basket");
+let containerBasket = document.querySelector(".container__basket");
 let modalResult = document.querySelector(".result");
 let on_off = document.querySelector(".on-off");
 
-if (LS.artBasket) {
-  getFromLS();
-  arr = JSON.parse(LS.getItem("artBasket"));
-  for (let el of arr) {
-    createElBasket(el);
-  }
-}
-
-catalogArt.addEventListener("click", function (event) {
-  if (event.target.classList.contains("button_article")) {
-    event.target.classList.toggle("button_added");
-    if (event.target.classList.contains("button_added")) {
-      event.target.innerText = "Добавлено";
-      setIntoLS(event);
-      // createElBasket(el);
-    } else {
-      event.target.innerText = "В корзину";
-      delEl(event);
-    }
-  }
-});
 
 let setIntoLS = (event) => {
-  let title = event.target
-    .closest(".reproduction")
-    .querySelector(".name").innerText;
-  let price = event.target
-    .closest(".reproduction")
-    .querySelector(".price").innerText;
-  let img = event.target
-    .closest(".reproduction")
-    .querySelector(".picture")
-    .getAttribute("src");
+  let artist = event.target.closest(".reproduction").querySelector(".painter").innerText;
+  let title = event.target.closest(".reproduction").querySelector(".name").innerText;
+  let material = event.target.closest(".reproduction").querySelector(".descr").innerText;
+  let price = event.target.closest(".reproduction").querySelector(".price").innerText;
+  let img = event.target.closest(".reproduction").querySelector(".picture").getAttribute("src");
   let obj = {
+    artist: artist,
     title: title,
+    material: material,
     price: price,
     image: img,
     isAtBasket: true,
@@ -62,16 +37,10 @@ let setIntoLS = (event) => {
   numBasket.innerText = arr.length;
 };
 
-function delEl(event) {
-  let title = event.target
-    .closest(".reproduction")
-    .querySelector(".name").innerText;
-  arr.splice(
-    arr.findIndex((el) => el.title == title),
-    1
-  );
+let delEl = (event) => {
+  let title = event.target.closest(".reproduction").querySelector(".name").innerText;
+  arr.splice(arr.findIndex((el) => el.title == title), 1);
   LS.setItem("artBasket", JSON.stringify(arr));
-
   let numBasket = binIcon.querySelector("div");
   if (arr.length) {
     numBasket.classList.add("number__bin");
@@ -82,32 +51,8 @@ function delEl(event) {
   }
 }
 
-for (let el of btnsCountry) {
-  el.addEventListener("click", function () {
-    let btnId = el.getAttribute("id").toLowerCase();
-    let newData = art.filter((el) => el.country.toLowerCase() === btnId);
-    catalog.innerHTML = "";
-    renderCard(newData);
-    for (let btn of btnsCountry) {
-      btn.classList.remove("active");
-    }
-    el.classList.add("active");
-
-    if (LS.artBasket) {
-      getFromLS();
-    }
-  });
-}
-
-//передать данные из базы данных в карточки
-function renderCard(data) {
-  data.forEach((el) => {
-    createCard(el);
-  });
-}
-
 //отобразить карточку на странице
-function createCard(obj) {
+let createCard = (obj) => {
   //увязать с дивом для карточек
   const container = document.querySelector(".catalogArt");
   //создать карточку
@@ -141,46 +86,42 @@ function createCard(obj) {
   card.append(img, card_text, btnNode);
 }
 
-function getFromLS() {
+//передать данные из базы данных в карточки
+let renderCard = (data) => {
+  data.forEach((el) => {createCard(el);
+  });
+}
+renderCard(dataNew);
+
+let getFromLS = () => {
+  let cards = document.querySelectorAll(".reproduction");
   arr = JSON.parse(LS.getItem("artBasket"));
-  let cards = document.querySelectorAll("article");
   for (let el of cards) {
     if (arr.find((name) => name.title == el.querySelector(".name").innerText)) {
       el.querySelector(".button_article").classList.add("button_added");
       el.querySelector(".button_article").innerText = "Добавлено";
+    } else {
+      el.querySelector(".button_article").classList.remove("button_added");
+      el.querySelector(".button_article").innerText = "В корзину";
     }
   }
+  changeNumberBasket();
+}
+
+let changeNumberBasket = () => {
   let numBasket = binIcon.querySelector("div");
   if (arr.length) {
     numBasket.classList.add("number__bin");
     numBasket.innerText = arr.length;
+    createElBasket();
   } else {
     numBasket.classList.remove("number__bin");
     numBasket.innerText = "";
   }
 }
 
-binIcon.addEventListener("click", function () {
-  body.classList.toggle("body-bgr");
-  modal.classList.remove("d-none");
-  on_off.classList.add("d-none");
-  if (arr.length == 0) {
-    modal.innerHTML = `<div class="bin__title">
-    <h2 class="title__block">Корзина</h2>
-    <button class="modal__close">
-      <img class="modal__img" src="./src/images/cross.svg" alt="cross" />
-    </button>
-    </div>
-    <div class="container__basket">
-    <p class="name no-items">Ваша корзина пуста</p>
-    </div>`;
-  } else {
-    createElBasket();
-  }
-});
-
-function createElBasket() {
-  container__basket.innerHTML = "";
+let createElBasket = () => {
+  containerBasket.innerHTML = "";
   arr = JSON.parse(LS.getItem("artBasket"));
   if (arr.length) {
     for (let el of arr) {
@@ -189,7 +130,9 @@ function createElBasket() {
       modalContent.innerHTML = `
       <div class="position__left">
         <img class="picture__icon" src=${el.image} alt=${el.title} />
-        <p class="descr descr_basket">${el.title}</p>
+        <p class="descr descr_basket">${el.artist}</p>
+        <p class="descr descr_basket title_basket">${el.title}</p>
+        <p class="painter descr_basket">${el.material}</p>
       </div>
       <div class="position__right">
         <p class="descr descr_basket">${el.price}</p>
@@ -198,39 +141,20 @@ function createElBasket() {
       let sum = arr.reduce((accum, item) => accum + parseInt(item.price), 0);
       modalResult.classList.add("result");
       modalResult.innerHTML = `<p class="descr descr_basket">Заказ на сумму: <span class="price price_final">${sum} руб.</span> </p>
-      <button class="button button_order">Оформить</button>`;
-      container__basket.append(modalContent);
+      <div class="btns__result">
+      <button class="button button_clear">Очистить корзину</button>
+      <button class="button button_order">Оформить</button>
+      </div>`;
+      containerBasket.append(modalContent);
       modal.append(modalResult);
     }
   }
 }
 
-modal.addEventListener("click", function (event) {
-  console.log("не хочу закрывать");
-  event.preventDefault();
-});
-
-modal.addEventListener("click", function (event) {
-  body.classList.toggle("body-bgr");
-  event.target.classList.contains(".modal__img");
-  modal.classList.add("d-none");
-  on_off.classList.remove("d-none");
-});
-
-container__basket.addEventListener("click", function (event) {
-  if (event.target.classList == "basket") {
-    deleteItem(event.target);
-  }
-});
-
 let deleteItem = (value) => {
   arr = JSON.parse(LS.getItem("artBasket"));
-  let textItem = value
-    .closest(".position")
-    .querySelector(".descr_basket").innerText;
-
+  let textItem = value.closest(".position").querySelector(".title_basket").innerText;
   let cards = value.closest("body").querySelectorAll(".name");
-  console.log(cards);
   for (let el of cards) {
     if (el.outerText == textItem) {
       let btn = el.closest(".reproduction").querySelector(".button_article");
@@ -239,11 +163,100 @@ let deleteItem = (value) => {
     }
   }
   arr.splice(
-    arr.findIndex((el) => el.title === textItem),
-    1
-  );
+  arr.findIndex((el) => el.title === textItem), 1);
   LS.setItem("artBasket", JSON.stringify(arr));
   value.closest(".position").remove();
   createElBasket();
   getFromLS();
 };
+
+let clearBasket = () => {
+  arr = [];
+  LS.clear();
+  containerBasket.innerHTML = `<p class="name no-items">Ваша корзина пуста</p>`;
+  modalResult.classList.add("d-none");
+  changeNumberBasket();
+  catalogArt.innerHTML = "";
+  renderCard(art);
+};
+
+if (LS.artBasket) {
+  getFromLS();
+  arr = JSON.parse(LS.getItem("artBasket"));
+  for (let el of arr) {
+    createElBasket(el);
+  }
+}
+
+home.addEventListener("click", refresh);
+function refresh() {
+  location.reload();
+}
+
+for (let el of btnsCountry) {
+  el.addEventListener("click", function () {
+    let btnId = el.getAttribute("id").toLowerCase();
+    let newData = art.filter((el) => el.country.toLowerCase() === btnId);
+    catalogArt.innerHTML = "";
+    renderCard(newData);
+    for (let btn of btnsCountry) {
+    btn.classList.remove("active");
+    }
+    el.classList.add("active");
+    if (LS.artBasket) {
+      getFromLS();
+    }
+  });
+}
+
+catalogArt.addEventListener("click", function (event) {
+  if (event.target.classList.contains("button_article")) {
+    event.target.classList.toggle("button_added");
+    if (event.target.classList.contains("button_added")) {
+      event.target.innerText = "Добавлено";
+      setIntoLS(event);
+    } else {
+      event.target.innerText = "В корзину";
+      delEl(event);
+    }
+  }
+});
+
+modalResult.addEventListener("click", function (event) {
+  if (event.target.classList.contains("button_clear")) {
+    clearBasket();
+  }
+});
+
+binIcon.addEventListener("click", function () {
+  body.classList.toggle("body-bgr");
+  modal.classList.remove("d-none");
+  on_off.classList.add("d-none");
+  if (arr.length == 0) {
+    containerBasket.innerHTML = `<p class="name no-items">Ваша корзина пуста</p>`;
+    modalResult.classList.add("d-none");
+  } else {
+    createElBasket();
+    modalResult.classList.remove("d-none");
+  }
+});
+
+modal.addEventListener("click", function (event) {
+  if (event.target.classList.contains("cross")) {
+    body.classList.toggle("body-bgr");
+    modal.classList.add("d-none");
+    on_off.classList.remove("d-none");
+  } 
+});
+
+containerBasket.addEventListener("click", function (event) {
+  if (event.target.classList == "basket") {
+    deleteItem(event.target);
+    if (arr.length == 0) {
+      clearBasket();
+    }
+  }
+});
+
+
+

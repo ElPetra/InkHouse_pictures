@@ -19,7 +19,7 @@
 .modal__close {
   border: none;
 }
-.modal__img {
+.cross {
   width: 15px;
   height: 15px;
 }
@@ -64,15 +64,20 @@
   height: 15px;
 }
 .picture__icon {
-  max-width: 50px;
-  height: 40px;
+  // max-width: 50px;
+  height: 60px;
   object-fit: contain;
   background-color: white;
 }
 .descr_basket {
   margin-top: 0;
 }
-.button_order {
+.btns__result{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.button_order, .button_clear {
   padding: 5px 20px;
   height: min-content;
 }
@@ -88,6 +93,8 @@
 .no-items {
   text-align: center;
   color: $active-color;
+  border: solid 1px;
+  padding: 10px 30px;
 }
 .price_final {
   margin-left: 10px;
