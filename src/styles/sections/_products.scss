@@ -1,3 +1,6 @@
+.products {
+  padding: 0 39px;
+}
 .container_products {
   @include flex-row-sb-aic;
   gap: 30px;
@@ -32,4 +35,19 @@
 }
 .btn_products {
   margin-top: 60px;
+}
+@media (max-width: 1100px) {
+  .products__img {
+    max-width: 330px;
+    height: 380px;
+    object-fit: cover;
+  }
+  .title {
+    font-size: 40px;
+    line-height: 100%;
+  }
+  .products__content {
+    max-width: 330px;
+    height: 308px;
+  }
 }

@@ -177,8 +177,13 @@ let clearBasket = () => {
   modalResult.classList.add("d-none");
   changeNumberBasket();
   catalogArt.innerHTML = "";
-  renderCard(art);
-};
+  let arrBtnsCountry = Array.from(btnsCountry);
+  let btnActive = arrBtnsCountry.find((el) => el.classList.contains("active"));
+  let btnId = btnActive.getAttribute("id").toLowerCase();
+  let newData = art.filter((el) => el.country.toLowerCase() === btnId);
+      renderCard(newData);
+  
+  };
 
 if (LS.artBasket) {
   getFromLS();

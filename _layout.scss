@@ -9,11 +9,6 @@
 .body-bgr {
   background-color: #E1EDE6;
 }
-@media (max-width: 1210px) {
-  .container {
-    max-width: 696px;
-  }
-}
 @font-face {
   font-family: "Raleway";
   src: url("../fonts/Raleway-Medium.eot");
@@ -36,4 +31,10 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    max-width: 690px;
+  }
 }

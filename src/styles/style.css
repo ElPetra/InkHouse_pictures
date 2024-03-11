@@ -35,11 +35,6 @@ button {
   background-color: #E1EDE6;
 }
 
-@media (max-width: 1210px) {
-  .container {
-    max-width: 696px;
-  }
-}
 @font-face {
   font-family: "Raleway";
   src: url("../fonts/Raleway-Medium.eot");
@@ -55,6 +50,11 @@ button {
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+}
+@media (max-width: 1000px) {
+  .container {
+    max-width: 690px;
+  }
 }
 .logo {
   display: flex;
@@ -195,6 +195,7 @@ button {
 
 header {
   background-color: #E1EDE6;
+  padding: 0 39px;
 }
 
 .container_header {
@@ -240,6 +241,16 @@ a:hover {
   color: #fff;
   text-align: center;
   padding: 0 4px;
+}
+
+@media (max-width: 1000px) {
+  .header__link {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+.products {
+  padding: 0 39px;
 }
 
 .container_products {
@@ -290,6 +301,22 @@ a:hover {
   margin-top: 60px;
 }
 
+@media (max-width: 1100px) {
+  .products__img {
+    max-width: 330px;
+    height: 380px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .title {
+    font-size: 40px;
+    line-height: 100%;
+  }
+  .products__content {
+    max-width: 330px;
+    height: 308px;
+  }
+}
 .reproductions {
   padding: 70px 0;
 }
