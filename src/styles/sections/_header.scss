@@ -38,8 +38,35 @@ a:hover {
   padding: 0 4px;
 }
 @media (max-width: 1000px) {
-.header__link {
-  font-size: 18px;
-  font-weight: 500;
+  .header__link {
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
+@media (max-width: 700px) {
+  .container_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+  }
+  .logo {
+    height: 67px;
+    border-bottom: #c3d1c6 solid 1px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .header__links {
+    margin-top: 16px;
+    justify-content: flex-start;
+  }
+  .header__link {
+    font-size: 18px;
+  }
+  .header__links {
+    max-width: 510px;
+    width: 100%;
+  }
 }

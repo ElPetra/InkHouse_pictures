@@ -22,3 +22,11 @@
 .button_article {
   margin-top: 20px;
 }
+@media (max-width: 1120px) {
+.catalogArt {
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+}
+.button_article {
+  max-width: 290px;
+}
+}

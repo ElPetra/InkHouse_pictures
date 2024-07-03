@@ -8,6 +8,12 @@ footer {
 .footer__left {
   @include flex-col-aifs-jcsb;
 }
+.contact {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .footer__middle {
   @include flex-row-aifs-jcsb;
   gap: 60px;
@@ -29,6 +35,9 @@ footer {
 .tel {
   margin-top: 35px;
 }
+.home {
+  display: block;
+}
 .footer__text {
   color: $third-text-color;
   font-family: $main-text, sans-serif;
@@ -40,8 +49,8 @@ footer {
   line-height: 150%;
 }
 .rights {
-   @include flex-col-fs-jcc;
-   gap: 6px;
+  @include flex-col-fs-jcc;
+  gap: 6px;
 }
 .rights__text {
   color: $third-text-color;
@@ -49,4 +58,36 @@ footer {
   font-size: 12px;
   font-weight: 500;
   line-height: 120%;
+}
+.icons {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .header__link {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .container_footer {
+    @include flex-col-aifs-jcsb;
+    padding: 23px 0;
+    width: 100%;
+  }
+  .footer__left {
+    @include flex-row-aifs-jcsb;
+    width: 100%;
+  }
+  .middle-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: space-between;
+    margin-top: 30px;
+    width: 100%;
+    gap: 75px;
+  }
+  .footer__right {
+    justify-content: flex-start;
+  }
+
 }

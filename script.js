@@ -15,13 +15,23 @@ let containerBasket = document.querySelector(".container__basket");
 let modalResult = document.querySelector(".result");
 let on_off = document.querySelector(".on-off");
 
-
 let setIntoLS = (event) => {
-  let artist = event.target.closest(".reproduction").querySelector(".painter").innerText;
-  let title = event.target.closest(".reproduction").querySelector(".name").innerText;
-  let material = event.target.closest(".reproduction").querySelector(".descr").innerText;
-  let price = event.target.closest(".reproduction").querySelector(".price").innerText;
-  let img = event.target.closest(".reproduction").querySelector(".picture").getAttribute("src");
+  let artist = event.target
+    .closest(".reproduction")
+    .querySelector(".painter").innerText;
+  let title = event.target
+    .closest(".reproduction")
+    .querySelector(".name").innerText;
+  let material = event.target
+    .closest(".reproduction")
+    .querySelector(".descr").innerText;
+  let price = event.target
+    .closest(".reproduction")
+    .querySelector(".price").innerText;
+  let img = event.target
+    .closest(".reproduction")
+    .querySelector(".picture")
+    .getAttribute("src");
   let obj = {
     artist: artist,
     title: title,
@@ -38,8 +48,13 @@ let setIntoLS = (event) => {
 };
 
 let delEl = (event) => {
-  let title = event.target.closest(".reproduction").querySelector(".name").innerText;
-  arr.splice(arr.findIndex((el) => el.title == title), 1);
+  let title = event.target
+    .closest(".reproduction")
+    .querySelector(".name").innerText;
+  arr.splice(
+    arr.findIndex((el) => el.title == title),
+    1
+  );
   LS.setItem("artBasket", JSON.stringify(arr));
   let numBasket = binIcon.querySelector("div");
   if (arr.length) {
@@ -49,7 +64,7 @@ let delEl = (event) => {
     numBasket.classList.remove("number__bin");
     numBasket.innerText = "";
   }
-}
+};
 
 //отобразить карточку на странице
 let createCard = (obj) => {
@@ -84,13 +99,14 @@ let createCard = (obj) => {
   btnNode.textContent = "В корзину";
   //разместить в карточке элементы: картинку, текстовый блок и кнопку
   card.append(img, card_text, btnNode);
-}
+};
 
 //передать данные из базы данных в карточки
 let renderCard = (data) => {
-  data.forEach((el) => {createCard(el);
+  data.forEach((el) => {
+    createCard(el);
   });
-}
+};
 renderCard(dataNew);
 
 let getFromLS = () => {
@@ -106,7 +122,7 @@ let getFromLS = () => {
     }
   }
   changeNumberBasket();
-}
+};
 
 let changeNumberBasket = () => {
   let numBasket = binIcon.querySelector("div");
@@ -118,7 +134,7 @@ let changeNumberBasket = () => {
     numBasket.classList.remove("number__bin");
     numBasket.innerText = "";
   }
-}
+};
 
 let createElBasket = () => {
   containerBasket.innerHTML = "";
@@ -149,11 +165,13 @@ let createElBasket = () => {
       modal.append(modalResult);
     }
   }
-}
+};
 
 let deleteItem = (value) => {
   arr = JSON.parse(LS.getItem("artBasket"));
-  let textItem = value.closest(".position").querySelector(".title_basket").innerText;
+  let textItem = value
+    .closest(".position")
+    .querySelector(".title_basket").innerText;
   let cards = value.closest("body").querySelectorAll(".name");
   for (let el of cards) {
     if (el.outerText == textItem) {
@@ -163,7 +181,9 @@ let deleteItem = (value) => {
     }
   }
   arr.splice(
-  arr.findIndex((el) => el.title === textItem), 1);
+    arr.findIndex((el) => el.title === textItem),
+    1
+  );
   LS.setItem("artBasket", JSON.stringify(arr));
   value.closest(".position").remove();
   createElBasket();
@@ -181,9 +201,8 @@ let clearBasket = () => {
   let btnActive = arrBtnsCountry.find((el) => el.classList.contains("active"));
   let btnId = btnActive.getAttribute("id").toLowerCase();
   let newData = art.filter((el) => el.country.toLowerCase() === btnId);
-      renderCard(newData);
-  
-  };
+  renderCard(newData);
+};
 
 if (LS.artBasket) {
   getFromLS();
@@ -205,7 +224,7 @@ for (let el of btnsCountry) {
     catalogArt.innerHTML = "";
     renderCard(newData);
     for (let btn of btnsCountry) {
-    btn.classList.remove("active");
+      btn.classList.remove("active");
     }
     el.classList.add("active");
     if (LS.artBasket) {
@@ -251,7 +270,7 @@ modal.addEventListener("click", function (event) {
     body.classList.toggle("body-bgr");
     modal.classList.add("d-none");
     on_off.classList.remove("d-none");
-  } 
+  }
 });
 
 containerBasket.addEventListener("click", function (event) {
@@ -262,6 +281,7 @@ containerBasket.addEventListener("click", function (event) {
     }
   }
 });
+
 
 
 

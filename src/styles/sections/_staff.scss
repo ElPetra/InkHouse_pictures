@@ -33,3 +33,31 @@
   height: 80px;
   border-radius: 50%;
 }
+@media (max-width: 1120px) {
+  .picture {
+    height: 422px;
+    max-width: 290px;
+  }
+  .container_staff {
+    @include flex-col-aifs-jcsb;
+  }
+  .hand {
+    transform: translate(16%, -129%);
+    width: 308px;
+    height: 454px;
+  }
+  .text__team {
+    max-width: 690px;
+    width: 100%;
+    color: #2c2d35;
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .baguette {
+    height: 440px;
+    max-width: 413px;
+    height: 510px;
+  }
+}

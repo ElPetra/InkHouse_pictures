@@ -36,7 +36,7 @@
 .btn_products {
   margin-top: 60px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .products__img {
     max-width: 330px;
     height: 380px;
@@ -45,9 +45,15 @@
   .title {
     font-size: 40px;
     line-height: 100%;
+    max-width: 330px;
+    width: 100%;
   }
   .products__content {
     max-width: 330px;
     height: 308px;
   }
+  .products {
+  padding: 0 39px;
+  margin-top: 35px;
+}
 }

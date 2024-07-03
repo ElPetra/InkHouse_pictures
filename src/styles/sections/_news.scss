@@ -53,3 +53,15 @@
   background-color: #d9b949;
   color: $main-text-color;
 }
+@media (max-width: 1120px) {
+  .h4 {
+    font-size: 30px;
+    max-width: 370px;
+  }
+  .button_yellow {
+    max-width: 210px;
+  }
+  // .star {
+  //   transform: scale(0.75);
+  // }
+}
